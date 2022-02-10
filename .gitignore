@@ -1,0 +1,4 @@
+# Project exclude paths
+/bt-admin/target/
+/bt-blog/target/
+/bt-framework/target/
