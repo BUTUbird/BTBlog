@@ -2,12 +2,14 @@ package org.butu.domain.entity;
 
 import java.util.Date;
 
+import com.baomidou.mybatisplus.annotation.TableField;
 import com.baomidou.mybatisplus.annotation.TableId;
 import com.baomidou.mybatisplus.annotation.TableName;
 import com.baomidou.mybatisplus.extension.activerecord.Model;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
+import lombok.experimental.Accessors;
 
 import java.io.Serializable;
 
@@ -22,6 +24,7 @@ import java.io.Serializable;
 @AllArgsConstructor
 @NoArgsConstructor
 @TableName("bt_article")
+@Accessors(chain = true)
 public class Article  {
     @TableId
     private Long id;
@@ -30,7 +33,7 @@ public class Article  {
     //文章内容
     private String content;
     //文章类型:1 文章 2草稿
-//    private String type;
+    private String type;
     //文章摘要
     private String summary;
     //所属分类id
@@ -42,7 +45,7 @@ public class Article  {
     //状态（0已发布，1草稿）
     private String status;
     //评论数
-//    private Integer commentCount;
+    private Integer commentCount;
     //访问量
     private Long viewCount;
     //是否允许评论 1是，0否
@@ -53,6 +56,9 @@ public class Article  {
     private Date createTime;
 
     private Long updateBy;
+
+    @TableField(exist = false)
+    private String categoryName;
 
     private Date updateTime;
     //删除标志（0代表未删除，1代表已删除）

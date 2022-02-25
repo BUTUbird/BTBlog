@@ -19,10 +19,10 @@ import java.util.List;
 public class CodeGeneratorUtils {
     public static void main(String[] args) {
         List<String> tables = new ArrayList<>();
-        tables.add("bt_category");//需要生成的表
+        tables.add("sys_user");//需要生成的表
 
 
-        FastAutoGenerator.create("jdbc:mysql://192.168.1.88:3306/bt_blog?useUnicode=true&characterEncoding=utf-8&useSSL=false&useLegacyDatetimeCode=false&serverTimezone=Asia/Shanghai","root","root")
+        FastAutoGenerator.create("jdbc:mysql://localhost:3306/bt_blog?useUnicode=true&characterEncoding=utf-8&useSSL=false&useLegacyDatetimeCode=false&serverTimezone=Asia/Shanghai","root","root")
                 .globalConfig(builder -> {
                     builder.author("BUTUbird")               //作者
                             .outputDir(System.getProperty("user.dir")+"\\bt-framework\\src\\main\\java")    //输出路径(写到java目录)
@@ -35,11 +35,11 @@ public class CodeGeneratorUtils {
                     builder.parent("org.butu")
                          //   .moduleName("bird")
                             .entity("entity")
-                            .service("service")
-                            .serviceImpl("serviceImpl")
-                          //  .controller("controller")
-                            .mapper("mapper")
-                            .xml("mapper")
+                          //  .service("service")
+                           // .serviceImpl("serviceImpl")
+                           // .controller("controller")
+                           // .mapper("mapper")
+                          //  .xml("mapper")
                             .pathInfo(Collections.singletonMap(OutputFile.mapperXml,System.getProperty("user.dir")+"\\bt-framework\\src\\main\\resources\\mapper"));
                 })
                 .strategyConfig(builder -> {

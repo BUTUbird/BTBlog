@@ -4,10 +4,7 @@ import org.butu.domain.ResponseResult;
 import org.butu.domain.entity.Article;
 import org.butu.service.ArticleService;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.web.bind.annotation.CrossOrigin;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 
@@ -38,5 +35,9 @@ public class ArticleController {
     @GetMapping("articleList")
     public ResponseResult articleList(Integer pageNum,Integer pageSize,Long categoryId){
         return articleService.articleList(pageNum, pageSize, categoryId);
+    }
+    @GetMapping("/{id}")
+    public ResponseResult getArticleDetail(@PathVariable("id") Long id){
+        return articleService.getArticleDetail(id);
     }
 }

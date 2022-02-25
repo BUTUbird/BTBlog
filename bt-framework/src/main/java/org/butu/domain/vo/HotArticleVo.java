@@ -1,4 +1,4 @@
-package org.butu.vo;
+package org.butu.domain.vo;
 
 import lombok.AllArgsConstructor;
 import lombok.Data;

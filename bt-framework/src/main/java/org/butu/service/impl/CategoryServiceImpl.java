@@ -10,7 +10,7 @@ import org.butu.service.ArticleService;
 import org.butu.service.CategoryService;
 import com.baomidou.mybatisplus.extension.service.impl.ServiceImpl;
 import org.butu.utils.BeanCopyUtils;
-import org.butu.vo.CategoryVo;
+import org.butu.domain.vo.CategoryVo;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
