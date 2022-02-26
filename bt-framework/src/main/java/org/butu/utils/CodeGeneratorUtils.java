@@ -35,16 +35,16 @@ public class CodeGeneratorUtils {
                     builder.parent("org.butu")
                          //   .moduleName("bird")
                             .entity("entity")
-                          //  .service("service")
-                           // .serviceImpl("serviceImpl")
-                           // .controller("controller")
-                           // .mapper("mapper")
-                          //  .xml("mapper")
+                            .service("service")
+                            .serviceImpl("serviceImpl")
+                            .controller("controller")
+                            .mapper("mapper")
+                            .xml("mapper")
                             .pathInfo(Collections.singletonMap(OutputFile.mapperXml,System.getProperty("user.dir")+"\\bt-framework\\src\\main\\resources\\mapper"));
                 })
                 .strategyConfig(builder -> {
                     builder.addInclude(tables)
-                            .addTablePrefix("bt_") //过滤表名前缀
+                            .addTablePrefix("sys_") //过滤表名前缀
                             .serviceBuilder()
                             .formatServiceFileName("%sService")
                             .formatServiceImplFileName("%sServiceImpl")
